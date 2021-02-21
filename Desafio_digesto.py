@@ -79,13 +79,9 @@ class Crawler_Tabela():
             acao = -1
             while acao != 0: 
                 print("Selecione a ações que deseja realizar")
-                acao = input("Digite 1 para imprimir os dados, 2 para salvar em CSV, 3 para salvar em json ou 0 para 
-
-encerrar: ")
+                acao = input("Digite 1 para imprimir os dados, 2 para salvar em CSV, 3 para salvar em json ou 0 para encerrar: ")
                 if acao != "0":
-                    pagina = input("Sobre os dados de qual página deseja realizar a operação? 1 para a página alvo 1 
-
-ou 2 para a página alvo 2: ")
+                    pagina = input("Sobre os dados de qual página deseja realizar a operação? 1 para a página alvo 1 ou 2 para a página alvo 2: ")
                 
                 if acao == "1" and pagina == "1":
                     self.Print_informacoes(df_pagina1)
