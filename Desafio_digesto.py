@@ -3,10 +3,10 @@ import pandas as pd
 from lxml import html
 import os 
 import sys
+import json
 script_dir = os.path.abspath(os.path.dirname(sys.argv[0]) or '.')
 
 class Crawler_Tabela:  
-    
 
     df = pd.DataFrame(columns=['Storage','CPU', 'Memory','Bandwidth', 'Price'])
     resposta = requests.get('https://www.vultr.com/products/cloud-compute/#pricing')
@@ -34,7 +34,11 @@ class Crawler_Tabela:
         print("não foi possível extrair as informações")
 
     def Salva_Json(self,df):
-        
+        print("Insera o nome do arquivo, mas não coloque .json")
+        nome = input()
+        dic = df.to_dict()
+        with open(script_dir+'\\'+nome+'.json', 'w') as data:
+            json.dump(dic, data,indent=4)
 
     def Salva_CSV(self,df):
         print("Insera o nome do arquivo, mas não coloque .csv")
@@ -58,8 +62,6 @@ class Crawler_Tabela:
                     return None
                 else:
                     print("input inválido\n")
-
- 
         
 
 if __name__ == "__main__":
