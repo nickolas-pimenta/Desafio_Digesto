@@ -60,16 +60,19 @@ class Crawler_Tabela():
         print("Insera o nome do arquivo, mas não coloque .json")
         nome = input()
         dic = df.to_dict()
-        with open(script_dir+'\\'+nome+'.json', 'w') as data:
+        with open(script_dir+'/'+nome+'.json', 'w') as data:
             json.dump(dic, data,indent=4)
+        print("arquivo salvo com sucesso\n")
 
     def Salva_CSV(self,df):
         print("Insera o nome do arquivo, mas não coloque .csv")
         nome = input()
-        df.to_csv(script_dir+'\\'+nome+'.csv',index=False)
+        df.to_csv(script_dir+'/'+nome+'.csv',index=False)
+        print("arquivo salvo com sucesso\n")
 
     def Print_informacoes(self,df):
         print(df)
+        print("")
           
 
     def Acoes(self):
@@ -78,7 +81,7 @@ class Crawler_Tabela():
         if not df_pagina1.empty and not df_pagina2.empty:
             acao = -1
             while acao != 0: 
-                print("Selecione a ações que deseja realizar")
+                print("Selecione qual função deseja executar")
                 acao = input("Digite 1 para imprimir os dados, 2 para salvar em CSV, 3 para salvar em json ou 0 para encerrar: ")
                 if acao != "0":
                     pagina = input("Sobre os dados de qual página deseja realizar a operação? 1 para a página alvo 1 ou 2 para a página alvo 2: ")
