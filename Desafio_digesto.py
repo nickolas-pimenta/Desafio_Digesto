@@ -93,8 +93,8 @@ class Crawler_Tabela():
 
 # Este metodo recebe um data frame e printa suas informaçoes.
     def Print_informacoes(self,df):
-        print(df)
-        print("")
+        print(df,"\n")
+        
           
 
 # Este metodo executa o menu que o usuario interage e controla quando um determinado metodo deve ser chamado
